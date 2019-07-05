@@ -1,0 +1,52 @@
+@model WebLecturaInteractiva.Models.SubCategoriaLectura
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h2>Edit</h2>
+
+<h4>SubCategoriaLectura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_SubCategoriaLectura" />
+            <div class="form-group">
+                <label asp-for="NombreSubCategoriaLectura" class="control-label"></label>
+                <input asp-for="NombreSubCategoriaLectura" class="form-control" />
+                <span asp-validation-for="NombreSubCategoriaLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DecripcionSubCategoriaLectura" class="control-label"></label>
+                <input asp-for="DecripcionSubCategoriaLectura" class="form-control" />
+                <span asp-validation-for="DecripcionSubCategoriaLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagenSubCategoriaLectura" class="control-label"></label>
+                <input asp-for="ImagenSubCategoriaLectura" class="form-control" />
+                <span asp-validation-for="ImagenSubCategoriaLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_CategoriaLectura" class="control-label"></label>
+                <select asp-for="Id_CategoriaLectura" class="form-control" asp-items="ViewBag.Id_CategoriaLectura"></select>
+                <span asp-validation-for="Id_CategoriaLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_Lectura" class="control-label"></label>
+                <select asp-for="Id_Lectura" class="form-control" asp-items="ViewBag.Id_Lectura"></select>
+                <span asp-validation-for="Id_Lectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

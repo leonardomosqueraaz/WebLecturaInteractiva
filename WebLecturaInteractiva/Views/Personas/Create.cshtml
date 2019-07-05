@@ -1,0 +1,112 @@
+﻿@model WebLecturaInteractiva.Models.Personas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row clearfix">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        <i class="material-icons">face</i>
+                        <span>Personas</span>                        
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                @*<li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>*@
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <form asp-action="Create" id="form_validation" method="POST">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line ">
+                                <div class="btn-group bootstrap-select form-control show-tick dropup">
+                                    <label asp-for="Id_TipoIdentificacion" class="control-label"></label>
+                                    @* @Html.DropDownListFor(m => m.Id_TipoIdentificacion, new SelectList(Model.TipoIdentificacion.Personas, "Id_TipoIdentificacion", "Nombres_TipoIdentificacion"), "-- Tipo De Identificacion --", new { @class = "form-control show-tick" })*@
+                                    @Html.DropDownList("Id_TipoIdentificacion", null, "-- Tipo De Identificacion --", htmlAttributes: new { @class = "form-control show-tick" })
+                                    @Html.ValidationMessageFor(m => m.Id_TipoIdentificacion, "", new { @class = "font-italic text-danger" })
+
+                                    @*<button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>*@
+                                    @*<select asp-for="Id_TipoIdentificacion" class="form-control show-tick" asp-items="ViewBag.Id_TipoIdentifacion" data-toggle="dropdown" title="-- Please select --" aria-expanded="false"></select>*@
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line ">
+                                <div class="btn-group bootstrap-select form-control show-tick dropup">
+                                    <label asp-for="Id_TPersona" class="control-label"></label>                                   
+                                    @Html.DropDownList("Id_TPersona", null, "-- Tipo de Persona --", htmlAttributes: new { @class = "form-control show-tick" })
+                                    @Html.ValidationMessageFor(m => m.Id_TPersona, "", new { @class = "font-italic text-danger" })                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="help-info">Min. 5, Max. 15 caracteres</div>
+                            <div class="form-line">
+                                <label asp-for="Identificacion_Personas" class="control-label"></label>
+                                <input asp-for="Identificacion_Personas" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Identificacion_Personas" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="help-info">Min. 5, Max. 40 caracteres</div>
+                            <div class="form-line">
+                                <label asp-for="Nombre_Personas" class="control-label"></label>
+                                <input asp-for="Nombre_Personas" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Nombre_Personas" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="help-info">Min. 5, Max. 40 caracteres</div>
+                            <div class="form-line">
+                                <label asp-for="Apellido_Personas" class="control-label"></label>
+                                <input asp-for="Apellido_Personas" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Apellido_Personas" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="help-info">Ejemplo@ejemplo.com</div>
+                            <div class="form-line">
+                                <label asp-for="Correo_Personas" class="control-label"></label>
+                                <input asp-for="Correo_Personas" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Correo_Personas" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="btn-group" role="group">
+                                <a href="@Url.Action("Index","Personas")" class="btn bg-orange waves-effect">
+                                    <i class="material-icons">arrow_back</i>
+                                    <span>Volver</span>
+                                </a>
+                                <button type="submit" value="Create" class="btn bg-green waves-effect">
+                                    <i class="material-icons">save</i>
+                                    <span>SAVE</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+ 
+

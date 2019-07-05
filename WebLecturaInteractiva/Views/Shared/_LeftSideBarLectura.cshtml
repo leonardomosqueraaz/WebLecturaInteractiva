@@ -1,0 +1,83 @@
+﻿<section>
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar-lectura">
+        <div class="titulo-lectura">
+            <h2>Lecturas</h2>
+        </div>
+        <div class="img-lectura">
+            <img class="rounded mx-auto d-block" src="~/images/image-gallery/1.jpg"/>
+        </div>
+        @*<div class="user-info">
+            <div class="image">
+                <img src="../../images/user.png" width="48" height="48" alt="User">
+            </div>
+            <div class="info-container">
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                <div class="email">john.doe@example.com</div>
+                <div class="btn-group user-helper-dropdown">
+                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">person</i>Profile</a></li>
+                        <li role="seperator" class="divider"></li>
+                        <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">group</i>Followers</a></li>
+                        <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">shopping_cart</i>Sales</a></li>
+                        <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">favorite</i>Likes</a></li>
+                        <li role="seperator" class="divider"></li>
+                        <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">input</i>Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+
+        @*<!-- Menu -->
+        <div class="menu">
+            <ul class="list">
+                <li class="header">PANEL DE NAVEGACION</li>
+                <li class="active">
+                    <a href="/">
+                        <i class="material-icons">home</i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Cursos")">
+                        <i class="material-icons">school</i>
+                        <span>Cursos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Personas")">
+                        <i class="material-icons">face</i>
+                        <span>Informacion Personal</span>
+                    </a>
+                </li>
+                li class="header">Tipos de lectura</li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="material-icons col-amber">donut_large</i>
+                        <span>Expositiva</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="material-icons col-light-blue">donut_large</i>
+                        <span>Information</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- #Menu -->*@
+        <!-- Footer -->
+        <div class="legal">
+            <div class="copyright">
+                &copy; @(DateTime.Now.Year) - @(DateTime.Now.Year + 1) <a href="javascript:void(0);">Web Interactiva</a>.
+            </div>
+            <div class="version">
+                <b>Version: </b> @System.Reflection.Assembly.GetExecutingAssembly().GetName().Version
+            </div>
+        </div>
+        <!-- #Footer -->
+    </aside>
+    <!-- #END# Left Sidebar -->
+
+</section>

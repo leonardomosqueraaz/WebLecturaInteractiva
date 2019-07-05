@@ -1,0 +1,36 @@
+﻿@model WebLecturaInteractiva.Models.TipoPersonas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoPersonas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_TPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_TPersona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion_TPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion_TPersona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_Persona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado_Persona)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_TPersona">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

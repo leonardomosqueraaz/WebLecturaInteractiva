@@ -1,0 +1,63 @@
+﻿@model WebLecturaInteractiva.ModelViews.CreacionCursosViews
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+@*<div class="form-group form-float">
+        <div class="help-info">Min. 5, Max. 40 caracteres</div>
+        <label asp-for="Nombre_ActPreguntas" class="control-label"></label>
+        <div class="input-group">
+            <div class="form-line">
+                <input asp-for="Nombre_ActPreguntas" class="form-control" />
+            </div>
+            <span asp-validation-for="Nombre_ActPreguntas" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group form-float">
+        <div class="help-info">Min. 10, Max. 200 caracteres</div>
+        <div class="form-line">
+            <label asp-for="Descripcion_ActPreguntas" class="control-label"></label>
+            <input asp-for="Descripcion_ActPreguntas" class="form-control" />
+        </div>
+        <span asp-validation-for="Descripcion_ActPreguntas" class="text-danger"></span>
+    </div>*@
+
+<div class="form-group form-float">
+    <div class="help-info">DD/MM/AAAA</div>
+    <label asp-for="ActividadPreguntas.FechaInicio_ActPreguntas" class="control-label"></label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">date_range</i>
+        </span>
+        <div class="form-line">
+            <input asp-for="ActividadPreguntas.FechaInicio_ActPreguntas" class="form-control" />
+        </div>
+        <span asp-validation-for="ActividadPreguntas.FechaInicio_ActPreguntas" id="ActividadPreguntas_FechaInicio_ActPreguntas" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group form-float">
+    <div class="help-info">DD/MM/AAAA</div>
+    <label asp-for="ActividadPreguntas.FechaFinal_ActPreguntas" class="control-label"></label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">date_range</i>
+        </span>
+        <div class="form-line">
+            <input asp-for="ActividadPreguntas.FechaFinal_ActPreguntas" class="form-control" />
+        </div>
+        <span asp-validation-for="ActividadPreguntas.FechaFinal_ActPreguntas" id="ActividadPreguntas_FechaFinal_ActPreguntas" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group form-float">
+    <div class="help-info">HH:MM</div>
+    <label asp-for="ActividadPreguntas.TiempoLimite_ActPreguntas" class="control-label"></label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">timer</i>
+        </span>
+        <div class="form-line">
+            <input asp-for="ActividadPreguntas.TiempoLimite_ActPreguntas" class="form-control" />
+        </div>
+        <span asp-validation-for="ActividadPreguntas.TiempoLimite_ActPreguntas" id="ActividadPreguntas_TiempoLimite_ActPreguntas" class="text-danger"></span>
+    </div>
+</div>
+

@@ -1,0 +1,40 @@
+@model WebLecturaInteractiva.Models.CategoriaLectura
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_Layout";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CategoriaLectura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreCategoriaLectura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreCategoriaLectura)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstrategiaCategoriaLectura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstrategiaCategoriaLectura)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagenCategoriaLectura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImagenCategoriaLectura)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id_CategoriaLectura" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

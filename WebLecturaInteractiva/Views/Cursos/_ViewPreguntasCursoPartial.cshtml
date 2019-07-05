@@ -1,0 +1,116 @@
+﻿@model WebLecturaInteractiva.ModelViews.CreacionCursosViews
+
+
+<div class="body">
+    <button type="button" class="btn btn-warning waves-effect" data-toggle="modal" data-target="#ModalActividades" id="BotonModalActividades" >
+        <i class="material-icons">add_to_queue</i>
+        CREAR ACTIVIDADES
+    </button>
+    <button type="button" class="btn btn-info waves-effect" data-toggle="modal" data-target="#ModalPreguntas" id="BotonModalPreguntas">
+        <i class="material-icons">add_to_queue</i>
+        CREAR PREGUNTAS
+    </button>
+</div>
+
+<div class="modal fade " id="ModalActividades" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="smallModalLabel">CREAR ACTIVIDADES</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("_ViewActividadesPartial", Model)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" id="ModalActividades">CREAR ACTIVIDAD</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal" id="cerrarModalActividades">CERRAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalPreguntas" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="smallModalLabel">CREAR PREGUNTAS</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("_ViewCrearPreguntaPartial", Model)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" id="ModalPreguntas">CREAR PREGUNTA</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CERRAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row clearfix">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card">
+            <div class="header bg-light-blue">
+                <h2>
+                    Preguntas Relacionadas <small>Lista de pregunta que se utilizaron para otros cursos</small>
+                </h2>
+            </div>
+            <div class="body" >
+                <div class="panel-group" id="accordion_actividadRelacionada" role="tablist" aria-multiselectable="true" style="display:none">
+                    <div class="panel panel-col-light-blue">
+                        <div class="panel-heading" role="tab" id="headingOne_1">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion_actividadRelacionada" href="#collapseOne_1" aria-expanded="true" aria-controls="collapseOne_1">
+                                    <i class="material-icons">library_books</i>
+                                   Actividad
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_1">
+                            <div class="panel-body">
+                                <fieldset>
+                                    <input id="acceptTerms-2" type="checkbox" name="ListaPreguntasRelacionadas" value="">
+                                    <label for="acceptTerms-2">Preguntas 1...</label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>           
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card">
+            <div class="header bg-light-green">
+                <h2>
+                    Preguntas <small>Preguntas realizadas por el docente</small>
+                </h2>
+            </div>
+            <div class="body" id="cuerpoActividadRealizadas">
+                <div class="panel-group" id="actividadGeneralRealizadas" role="tablist" aria-multiselectable="true" style="display:none">
+                    <div class="panel panel-col-light-green">
+                        <div class="panel-heading" role="tab" id="ancabezadoActividadGeneral">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#actividadGeneralRealizadas" href="#abrirActividadGeneral" aria-expanded="false" aria-controls="abrirActividadGeneral"
+                                   title="Popover Title">
+                                    <i class="material-icons">library_books</i>                                    
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="abrirActividadGeneral" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="ancabezadoActividadGeneral">
+                            <div class="panel-body" id="listcheckbox">
+                                <fieldset style="display:none" data-parent="listcheckbox">
+                                    <input id="acceptTerms-1" type="checkbox" name="ListaPreguntasDocente" value="" checked="checked">
+                                    <label for="acceptTerms-1">Preguntas 1...</label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,58 @@
+﻿@model WebLecturaInteractiva.ModelViews.LecturaViews
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h2>Crear</h2>
+
+<h4>Lectura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Crear" enctype="multipart/form-data">
+
+            <div class="form-group form-float">
+                <div class="form-line ">
+                    <div class="btn-group bootstrap-select form-control show-tick dropup">
+                        <label class="control-label">Modo de lectura</label>
+                        @Html.DropDownList("Id_ModoLectura", null, "-- Modo de Lectura --", htmlAttributes: new { @class = "form-control show-tick" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-float">
+                <div class="form-line ">
+                    <div class="btn-group bootstrap-select form-control show-tick dropup">
+                        <label class="control-label">Modo de lectura</label>
+                        @Html.DropDownList("Id_CategoriaLectura", null, "-- Categoria de Lectura --", htmlAttributes: new { @class = "form-control show-tick" })
+                    </div>
+                </div>
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LecturaView.TituloLectura" class="control-label"></label>
+                <input asp-for="LecturaView.TituloLectura" class="form-control" />
+                <span asp-validation-for="LecturaView.TituloLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturaView.DescripcionLectura" class="control-label"></label>
+                <input asp-for="LecturaView.DescripcionLectura" class="form-control" />
+                <span asp-validation-for="LecturaView.DescripcionLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturaView.ImagenLectura" class="control-label"></label>
+                <input asp-for="LecturaView.ImagenLectura" class="form-control" type="file" name="Imagen_Lectura" />
+                <span asp-validation-for="LecturaView.ImagenLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

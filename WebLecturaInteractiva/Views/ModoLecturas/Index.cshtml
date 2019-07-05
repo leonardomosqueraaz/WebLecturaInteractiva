@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebLecturaInteractiva.Models.ModoLectura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreModoLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionModoLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenModoLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrlSourse)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreModoLectura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionModoLectura)
+            </td>
+            <td>
+                <img width="60" height="60" style="border:double white;max-width: 100%;" src="@Url.Action("ConvertirImagen", "CategoriaLecturas", new { id = item.Id_ModoLectura })" class="img-rounded" alt="imagen Responsive" />              
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlSourse)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_ModoLectura">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_ModoLectura">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_ModoLectura">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

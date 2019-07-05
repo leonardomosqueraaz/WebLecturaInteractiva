@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebLecturaInteractiva.Models.CategoriaLectura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCategoriaLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstrategiaCategoriaLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenCategoriaLectura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCategoriaLectura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstrategiaCategoriaLectura)
+            </td>
+            <td>
+                <img width="60" height="60" style="border:double white;max-width: 100%;" src="@Url.Action("ConvertirImagen", "CategoriaLecturas", new { id = item.Id_CategoriaLectura })" class="img-rounded" alt="imagen Responsive" />
+                @*@Html.DisplayFor(modelItem => item.ImagenCategoriaLectura)*@
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_CategoriaLectura">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_CategoriaLectura">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_CategoriaLectura">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="block-header">
+    <h2>CURSOS</h2>
+</div>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <!--Agregar logica para recorrer cursos realizados-->
+        <div class="card">
+            <div class="header bg-blue-grey">
+                <h2>
+                    Titulo del Curso <small>Descripción del Curso</small>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);">Acciones del curso</a></li>
+                            @*<li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>*@
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                Informacion sobre el curso
+                <p>- Informacion 1</p>
+                <p>- Informacion 2</p>
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-primary btn-circle-lg waves-effect waves-circle waves-float" style="position: fixed; bottom: 10px; right: 1%;" href="@Url.Action("Crear","Cursos")">
+        <i class="material-icons">add_circle</i>
+    </a>
+    @*<input type="submit" class="btn btn-success" value="Añadir Menu" onclick="JavascriptFunction()" name="searchQuery" style="position: fixed; bottom: 10px; right: 1%;" />*@
+</div>

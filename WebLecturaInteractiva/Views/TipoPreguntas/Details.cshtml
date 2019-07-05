@@ -1,0 +1,42 @@
+﻿@model WebLecturaInteractiva.Models.TipoPreguntas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoPreguntas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_TipoPregunta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_TipoPregunta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion_TipoPregunta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion_TipoPregunta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SeleccionMultiple)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SeleccionMultiple)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_TipoPregunta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado_TipoPregunta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_TipoPregunta">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

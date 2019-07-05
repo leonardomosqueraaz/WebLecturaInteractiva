@@ -1,0 +1,64 @@
+﻿<section>
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        @Html.Partial("_LoginPartial")
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list">
+                <li class="header">PANEL DE NAVEGACION</li>
+                <li class="active">
+                    <a href="/">
+                        <i class="material-icons">home</i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Cursos")">
+                        <i class="material-icons">school</i>
+                        <span>Cursos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Personas")">
+                        <i class="material-icons">face</i>
+                        <span>Informacion Personal</span>
+                    </a>
+                </li>
+                <li class="header text-uppercase">LECTURAs</li>
+                <li>
+                    <a href="@Url.Action("Index","CategoriaLectura")">
+                        <i class="material-icons">
+                            speaker_notes
+                        </i>
+                        <span>Lectura</span>
+                    </a>
+                </li>
+                @*<li>
+            <a href="javascript:void(0);">
+                <i class="material-icons col-amber">donut_large</i>
+                <span>Warning</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">
+                <i class="material-icons col-light-blue">donut_large</i>
+                <span>Information</span>
+            </a>
+        </li>*@
+            </ul>
+        </div>
+        <!-- #Menu -->
+        <!-- Footer -->
+        <div class="legal">
+            <div class="copyright">
+                &copy; @(DateTime.Now.Year) - @(DateTime.Now.Year+1) <a href="javascript:void(0);">Web Interactiva</a>.
+            </div>
+            <div class="version">
+                <b>Version: </b> @System.Reflection.Assembly.GetExecutingAssembly().GetName().Version
+            </div>
+        </div>
+        <!-- #Footer -->
+    </aside>
+    <!-- #END# Left Sidebar -->
+
+</section>

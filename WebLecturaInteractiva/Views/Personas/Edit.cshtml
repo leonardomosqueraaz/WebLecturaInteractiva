@@ -1,0 +1,68 @@
+﻿@model WebLecturaInteractiva.Models.Personas
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Personas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_Personas" />
+            <div class="form-group">
+                <label asp-for="Id_TipoIdentificacion" class="control-label"></label>
+                <select asp-for="Id_TipoIdentificacion" class="form-control" asp-items="ViewBag.Id_TipoIdentificacion"></select>
+                <span asp-validation-for="Id_TipoIdentificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Identificacion_Personas" class="control-label"></label>
+                <input asp-for="Identificacion_Personas" class="form-control" />
+                <span asp-validation-for="Identificacion_Personas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre_Personas" class="control-label"></label>
+                <input asp-for="Nombre_Personas" class="form-control" />
+                <span asp-validation-for="Nombre_Personas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido_Personas" class="control-label"></label>
+                <input asp-for="Apellido_Personas" class="form-control" />
+                <span asp-validation-for="Apellido_Personas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo_Personas" class="control-label"></label>
+                <input asp-for="Correo_Personas" class="form-control" />
+                <span asp-validation-for="Correo_Personas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Estado_Personas" /> @Html.DisplayNameFor(model => model.Estado_Personas)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCreacion_Personas" class="control-label"></label>
+                <input asp-for="FechaCreacion_Personas" class="form-control" />
+                <span asp-validation-for="FechaCreacion_Personas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaActualizacion_Personas" class="control-label"></label>
+                <input asp-for="FechaActualizacion_Personas" class="form-control" />
+                <span asp-validation-for="FechaActualizacion_Personas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

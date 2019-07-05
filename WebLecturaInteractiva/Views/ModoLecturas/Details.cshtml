@@ -1,0 +1,42 @@
+﻿@model WebLecturaInteractiva.Models.ModoLectura
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ModoLectura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreModoLectura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreModoLectura)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionModoLectura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionModoLectura)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagenModoLectura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImagenModoLectura)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlSourse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UrlSourse)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_ModoLectura">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,66 @@
+﻿@model WebLecturaInteractiva.Models.Personas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Personas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_Personas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_Personas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Personas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Personas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_Personas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_Personas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo_Personas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Correo_Personas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_Personas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado_Personas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacion_Personas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacion_Personas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaActualizacion_Personas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaActualizacion_Personas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoIdentificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoIdentificacion.Id_TipoIdentificacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_Personas">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,186 @@
+@model List<WebLecturaInteractiva.Models.SubCategoriaLectura>
+
+@{
+    ViewData[WebLecturaInteractiva.Helper.Helper.VariablesVD.Title.ToString()] = "CUENTOS";
+    Layout = "_Lectura";
+    string titulo = string.Empty;
+    CategoriaLectura categoriaLectura = (CategoriaLectura)ViewData[WebLecturaInteractiva.Helper.Helper.VariablesVD.VDCategoriaLectura.ToString()];
+    foreach (var ch in categoriaLectura.NombreCategoriaLectura)
+    {
+        titulo += "<span>" + ch.ToString().ToUpper() + "</span>";
+    }
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="body">
+                <div class="row">
+                    @* Div para el titulo y la lista *@
+                    <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 top-sticky col-tiltle-lectura">
+                        <div class="title-ht divide-word">
+                            <h1>
+                                @Html.Raw(titulo)
+                            </h1>
+                        </div>
+                        <div class="align-center">
+                            <a href="@Url.Action("Index","CategoriaLectura")" class="btn bg-black btn-circle-lg waves-effect waves-circle waves-float">
+                                <i class="material-icons">keyboard_return</i>
+                            </a>
+                        </div>
+                        @*<div class="list-group" data-scroll-header id="listCategoria">
+                            @foreach (var item in Model)
+                            {
+                                <a href="#@item.NombreCategoriaLectura" class="list-group-item" data-scroll>
+                                    @item.NombreCategoriaLectura.ToUpper()
+                                </a>
+                            }   
+                        </div>*@
+                        <div class="ul-ht">
+                            <ul class="nav nav-tabs-vertical tab-col-blue-grey " data-scroll-header role="tablist" id="listCategoria">
+                                @foreach (var item in Model)
+                                {
+                                    string srtActive = (Model.IndexOf(item) == 0) ? "active in" : "";
+                                    <li role="presentation" class="@srtActive">
+                                        <a class="text-capitalize" href="#@item.NombreSubCategoriaLectura.Replace(" ","")" data-toggle="tab" data-scroll aria-expanded="false">@item.NombreSubCategoriaLectura</a>
+                                    </li>
+                                }   
+                            </ul>
+                        </div>
+                    </div>
+                    @* fin Div para el titulo y la lista *@
+                    @* Div para el contenido *@
+                    <div class="col-lg-4 col-md-7 col-sm-7 col-xs-7" data-spys="scroll" data-target="listCategoria" >
+                        <div class="tab-content">
+                            @foreach (var item in Model)
+                            {
+                                string srtActive = (Model.IndexOf(item) == 0) ? "active in" : "";
+                                <div role="tabpanel" class="tab-pane fade @srtActive" id="@item.NombreSubCategoriaLectura.Replace(" ","")">
+                                    <a href="@Url.Action("Index","SubCategoriaLectura",new SubCategoriaLectura {Id_SubCategoriaLectura = item.Id_SubCategoriaLectura})" data-toggle="tooltip">
+                                        <div class="col-lg-12 thumbnail">
+                                            @*Html.DisplayFor(modelItem => item.ImagenCategoriaLectura)*@
+                                            <img class="img-rounded" src="http://placehold.it/500x300">
+                                            <div class="caption">
+                                                <h2 class="align-center ">
+                                                    @Html.DisplayFor(modelItem => item.NombreSubCategoriaLectura)
+                                                </h2>
+                                                @*<hr />
+                                            <p class="align-center">
+                                                <a asp-action="Index" data-toggle="tooltip" asp-controller="SubCategoria" data-placement="bottom" title="Ver" asp-route-id="@item.Id_CategoriaLectura" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
+                                                    <i class="material-icons">list</i>
+                                                </a>
+                                                <a asp-action="Edit" data-toggle="tooltip" data-placement="bottom" title="Editar" asp-route-id="@item.Id_CategoriaLectura" class="btn bg-amber btn-circle waves-effect waves-circle waves-float">
+                                                    <i class="material-icons">mode_edit</i>
+                                                </a>
+                                                <a asp-action="Delete" data-toggle="tooltip" data-placement="bottom" title="Eliminar" asp-route-id="@item.Id_CategoriaLectura" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                                                    <i class="material-icons">delete</i>
+                                                </a>
+                                            </p>*@
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <p class="">
+                                        <h4> Descripción </h4>
+                                        hahahahahahahahahhahahaha
+                                    </p>
+                                </div>
+                            }    
+                        </div>
+                        @*@foreach (var item in Model)
+                        {
+                            <div class="col-content" id="@item.NombreSubCategoriaLectura.Replace(" ","")">
+                                <a href="@Url.Action("Index","SubCategoriaLectura",new SubCategoriaLectura {Id_SubCategoriaLectura = item.Id_SubCategoriaLectura})" data-toggle="tooltip" >
+                                    <div class="col-lg-12 thumbnail">
+                                        @*Html.DisplayFor(modelItem => item.ImagenCategoriaLectura)
+                                        <img class="img-rounded" src="http://placehold.it/500x300">
+                                        <div class="caption">
+                                            <h2 class="align-center ">
+                                                @Html.DisplayFor(modelItem => item.NombreSubCategoriaLectura)
+                                            </h2>
+                                            @*<hr />
+                                            <p class="align-center">
+                                                <a asp-action="Index" data-toggle="tooltip" asp-controller="SubCategoria" data-placement="bottom" title="Ver" asp-route-id="@item.Id_CategoriaLectura" class="btn btn-primary btn-circle waves-effect waves-circle waves-float">
+                                                    <i class="material-icons">list</i>
+                                                </a>
+                                                <a asp-action="Edit" data-toggle="tooltip" data-placement="bottom" title="Editar" asp-route-id="@item.Id_CategoriaLectura" class="btn bg-amber btn-circle waves-effect waves-circle waves-float">
+                                                    <i class="material-icons">mode_edit</i>
+                                                </a>
+                                                <a asp-action="Delete" data-toggle="tooltip" data-placement="bottom" title="Eliminar" asp-route-id="@item.Id_CategoriaLectura" class="btn btn-danger btn-circle waves-effect waves-circle waves-float">
+                                                    <i class="material-icons">delete</i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <p class="">
+                                    <h4> Descripción </h4>
+                                    hahahahahahahahahhahahaha
+                                </p>
+                            </div>
+
+                        }*@
+                    </div>
+                    @* fin Div para el contenido *@
+
+                    @* Div imagen *@
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 top-sticky">
+                        <div class="image-ht">
+                            <img class="img-thumbnail" src="http://placehold.it/500x300">
+                        </div>
+                    </div>
+                    @* fin Div imagen *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreSubCategoriaLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecripcionSubCategoriaLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagenSubCategoriaLectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lectura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreSubCategoriaLectura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecripcionSubCategoriaLectura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagenSubCategoriaLectura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Id_CategoriaLectura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lectura.Id_Lectura)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_SubCategoriaLectura">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_SubCategoriaLectura">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_SubCategoriaLectura">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@

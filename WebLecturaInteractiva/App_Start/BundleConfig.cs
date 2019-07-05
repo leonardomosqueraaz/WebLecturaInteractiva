@@ -20,11 +20,44 @@ namespace WebLecturaInteractiva
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Content/plugins/sweetalert/sweetalert.min.js",
+                      "~/Content/plugins/jquery/jquery.min.js",
+                      "~/Content/plugins/bootstrap/js/bootstrap.js",
+                      "~/Content/plugins/bootstrap-select/js/bootstrap-select.js",
+                      "~/Content/plugins/jquery-slimscroll/jquery.slimscroll.js",
+                      "~/Content/plugins/node-waves/waves.js",
+                      "~/Content/plugins/momentjs/moment.js",
+                      "~/Content/plugins/autosize/autosize.js",
+                      "~/Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js",
+                      "~/Content/plugins/nestable/jquery.nestable.js",
+                      "~/Content/js/admin.js",
+                      "~/Content/js/pages/forms/form-wizard.js",
+                      "~/Content/js/pages/ui/sortable-nestable.js",
+                      "~/Content/plugins/bootstrap-select/js/bootstrap-select.js",
+                      "~/Content/js/demo.js",
+                      "~/Content/js/pages/forms/basic-form-elements.js",
+                      "~/Content/js/pages/ui/modals.js",
+                      "~/Content/plugins/sweetalert/sweetalert.min.js",
+                      "~/Content/plugins/jquery-validation/jquery.validate.js",
+                      "~/Content/plugins/jquery-steps/jquery.steps.js",
+                      "~/Content/plugins/sweetalert/sweetalert.min.js",
+                      "~/Content/plugins/multi-select/js/jquery.multi-select.js",
+                      "~/Content/js/global.js"));
+            //"~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/plugins/bootstrap/css/bootstrap.css",
+                      "~/Content/plugins/node-waves/waves.css",
+                      "~/Content/plugins/bootstrap-select/css/bootstrap-select.css",
+                      "~/Content/plugins/animate-css/animate.css",
+                      "~/Content/plugins/sweetalert/sweetalert.css",
+                      "~/Content/css/themes/all-themes.css",
+                      "~/Content/css/style.css",
+                      "~/Content/plugins/nestable/jquery-nestable.css",
+                      "~/Content/plugins/sweetalert/sweetalert.css",
+                      "~/Content/plugins/multi-select/css/multi-select.css"));
+            //"~/Content/bootstrap.css",
+            //          "~/Content/site.css"));
         }
     }
 }

@@ -1,0 +1,41 @@
+﻿@model WebLecturaInteractiva.ModelViews.CreacionCursosViews
+
+
+
+<div class="body">
+    <div class="row clearfix">
+        @foreach (var ModoLecturaitem in Model.CategoriaLecturas.ToList())
+        {
+            <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
+                <b>@ModoLecturaitem.NombreCategoriaLectura</b>
+                <div class="panel-group" id="accordion_@ModoLecturaitem.Id_CategoriaLectura" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" role="tab" id="headingOne_1">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion_@ModoLecturaitem.Id_CategoriaLectura" href="#collapseOne_1" aria-expanded="true" aria-controls="collapseOne_1">
+                                    <i class="material-icons">library_books</i>
+                                    Categoria Lectura Item #1
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_1">
+                            <div class="panel-body">
+                                @*@foreach (var DetalleModoLecturaItem in ModoLecturaitem.DetalleModoLecturaXLecturas.ToList())
+                                {
+                                    <div class="col-md-12">
+                                        <fieldset>
+                                            <input id="acceptTerms-2" type="checkbox" name="selectedLecturas" value="@DetalleModoLecturaItem.Lectura.Id_Lectura|@DetalleModoLecturaItem.Lectura.TituloLectura">
+                                            <label for="acceptTerms-2">@DetalleModoLecturaItem.Lectura.TituloLectura</label>
+                                        </fieldset>
+                                    </div>
+                                }*@
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

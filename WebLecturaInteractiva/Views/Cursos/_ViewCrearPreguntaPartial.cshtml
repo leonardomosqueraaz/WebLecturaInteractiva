@@ -1,0 +1,78 @@
+﻿@model WebLecturaInteractiva.ModelViews.CreacionCursosViews
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+@*@Html.DropDownListFor(m => m.Id_TipoIdentifacion, new SelectList(Model.identificacions, "Id_TipoIdentificacion", "Nombres_TipoIdentificacion"), "-- Tipo De Identificacion --", new { @class = "form-control show-tick" })*@
+@*<div class="form-group form-float">
+    <div class="help-info">Ej: Actividad 1</div>
+    <label class="control-label">Seleccione Actividad</label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">view_list</i>
+        </span>
+        <div class="form-line">
+            <select name="SelectActividad" id="SelectActividad">
+                <option value="0">-- Seleccione Actividad--</option>
+            </select>
+        </div>
+    </div>
+</div>
+<select name="SelectActividad" id="SelectActividad">
+    <option value="0">-- Seleccione Actividad--</option>
+</select>*@
+
+<div class="form-group form-float">
+    <div class="help-info">Ej: Elección múltiple</div>
+    <label class="control-label">Tipo de pregunta</label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">help</i>
+        </span>
+        <div class="form-line">
+            <div class="form-control show-tickbootstrap-select">
+                @Html.DropDownList("Id_TipoPregunta", null, "-- Tipo de Persona --", htmlAttributes: new { @class = "form-control show-tick" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group form-float">
+    <div class="help-info">Ej: Literal </div>
+    <label class="control-label">Nivel Pregunta</label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">help_outline</i>
+        </span>
+        <div class="form-line">
+            <div class="form-control show-tickbootstrap-select">
+                @Html.DropDownList("Id_NivelPregunta", null, "-- Tipo de Persona --", htmlAttributes: new { @class = "form-control show-tick" })
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group form-float">
+    <div class="help-info">Min. 10, Max. 40 caracteres</div>
+    <label asp-for="Preguntas.Nombre_Pregunta" class="control-label"></label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">create</i>
+        </span>
+        <div class="form-line">
+            <input asp-for="Preguntas.Nombre_Pregunta" class="form-control" />
+        </div>
+        <span asp-validation-for="Preguntas.Nombre_Pregunta" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group form-float">
+    <div class="help-info">Min. 10, Max. 200 caracteres</div>
+    <label asp-for="Preguntas.Descripcion_Pregunta" class="control-label"></label>
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="material-icons">border_color</i>
+        </span>
+        <div class="form-line">
+            <input asp-for="Preguntas.Descripcion_Pregunta" class="form-control" />
+        </div>
+        <span asp-validation-for="Preguntas.Descripcion_Pregunta" class="text-danger"></span>
+    </div>
+</div>

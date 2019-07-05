@@ -1,0 +1,112 @@
+﻿@model IEnumerable<WebLecturaInteractiva.Models.Personas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <i class="material-icons">people_outline</i>
+                    <span>Personas</span>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="@Url.Action("Create")">
+                                    <i class="material-icons">person_add</i>
+                                    <span>Crear nuevo Personas</span>
+                                </a>
+                                <a asp-action="Create">
+                                    <i class="material-icons">person_add</i>
+                                    <span>Subir Excel</span>
+                                </a>
+                            </li>
+                            @*<li><a href="javascript:void(0);">Another action</a></li>
+                        <li><a href="javascript:void(0);">Something else here</a></li>*@
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TipoIdentificacion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Identificacion_Personas)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombre_Personas)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Apellido_Personas)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Correo_Personas)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FechaCreacion_Personas)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FechaActualizacion_Personas)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Estado_Personas)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoIdentificacion.Id_TipoIdentificacion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Identificacion_Personas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre_Personas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Apellido_Personas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Correo_Personas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaCreacion_Personas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaActualizacion_Personas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Estado_Personas)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id_Personas">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id_Personas">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id_Personas">Delete</a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
